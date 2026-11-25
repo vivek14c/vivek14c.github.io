@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vivek Chavan</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Vivek Chavan – Management Trainee, HR at Reliance Industries. HR systems, people analytics and workforce cost planning.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a working HR desk. Left-aligned editorial column, project "workbooks" as cards, status chips carry real state. */
+:root{
+  --bg:#F5F7F6; --surface:#FFFFFF; --sunk:#EBF0EE; --ink:#12201E; --muted:#56635F; --line:#D8DFDC;
+  --accent:#0E5C56; --accent-ink:#FFFFFF; --mark:#F2C14E; --mark-soft:rgba(242,193,78,.45);
+  --ok:#1C7A4B; --ok-bg:#E2F3EA; --bad:#B42318; --bad-bg:#FDE7E4; --warn:#9A5B00; --warn-bg:#FCEFD6;
+  --violet:#6B3FA0; --violet-bg:#F0E8FA; --amber:#9A5B00; --amber-bg:#FDF0D5;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"Inter", "Segoe UI", system-ui, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --shadow:0 1px 2px rgba(18,32,30,.06), 0 8px 24px rgba(18,32,30,.06);
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0E1615; --surface:#15201E; --sunk:#1B2826; --ink:#E4ECE9; --muted:#9AA9A5; --line:#2A3835;
+  --accent:#5EC4B8; --accent-ink:#0B1413; --mark:#F2C14E; --mark-soft:rgba(242,193,78,.28);
+  --ok:#6FD3A0; --ok-bg:#163126; --bad:#FF8A7A; --bad-bg:#3A1C19; --warn:#F2C14E; --warn-bg:#33290F;
+  --violet:#C4A6F0; --violet-bg:#2A2138; --amber:#F2C14E; --amber-bg:#33290F;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25); color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#0E1615; --surface:#15201E; --sunk:#1B2826; --ink:#E4ECE9; --muted:#9AA9A5; --line:#2A3835;
+  --accent:#5EC4B8; --accent-ink:#0B1413; --mark:#F2C14E; --mark-soft:rgba(242,193,78,.28);
+  --ok:#6FD3A0; --ok-bg:#163126; --bad:#FF8A7A; --bad-bg:#3A1C19; --warn:#F2C14E; --warn-bg:#33290F;
+  --violet:#C4A6F0; --violet-bg:#2A2138; --amber:#F2C14E; --amber-bg:#33290F;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25); color-scheme:dark }
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto} *{transition:none!important;animation:none!important}}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--body);
+  padding-left:max(16px, env(safe-area-inset-left,0px));padding-right:max(16px, env(safe-area-inset-right,0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1120px;margin:0 auto}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.01em}
+p{margin:0}
+.label{font:500 12px/1.2 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--line);margin:0 calc(-1 * max(16px, env(safe-area-inset-left,0px))) 0 calc(-1 * max(16px, env(safe-area-inset-right,0px)))}
+.nav .wrap{display:flex;align-items:center;gap:24px;padding:12px max(16px, env(safe-area-inset-right,0px)) 12px max(16px, env(safe-area-inset-left,0px));min-height:56px}
+.brand{font:700 17px/1 var(--display);color:var(--ink);text-decoration:none;margin-right:auto}
+.nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0}
+.nav ul a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:500}
+.nav ul a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 14px/1 var(--body);padding:11px 16px;border-radius:8px;text-decoration:none;border:1px solid transparent;cursor:pointer}
+.btn-primary{background:var(--accent);color:var(--accent-ink)}
+.btn-primary:hover{filter:brightness(1.08)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn-ghost:hover{background:var(--sunk)}
+@media (max-width:760px){.nav ul{display:none}}
+
+/* hero */
+.hero{padding-block:72px 56px;display:grid;gap:28px}
+.hero h1{font-size:clamp(38px,6.4vw,76px);line-height:1.02;font-weight:800;max-width:16ch}
+.hero h1 em{font-style:normal;background:linear-gradient(transparent 62%, var(--mark-soft) 62%)}
+.hero .lede{font-size:clamp(17px,1.6vw,19px);color:var(--muted);max-width:62ch}
+.hero .lede strong{color:var(--ink);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:20px}
+.stat{padding:20px 20px 20px 0;display:grid;gap:6px}
+.stat + .stat{padding-left:20px;border-left:1px solid var(--line)}
+.stat b{font:800 clamp(28px,3.4vw,40px)/1 var(--display);font-variant-numeric:tabular-nums}
+.stat span{font-size:14px;color:var(--muted);line-height:1.4}
+@media (max-width:760px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.stat:nth-child(3){padding-left:0;border-left:0}.stat:nth-child(n+3){border-top:1px solid var(--line)}}
+
+/* sections */
+section{padding-block:56px;border-top:1px solid var(--line)}
+.sec-head{display:grid;gap:10px;margin-bottom:32px;max-width:68ch}
+.sec-head h2{font-size:clamp(28px,3.6vw,40px);font-weight:700}
+.sec-head p{color:var(--muted)}
+
+/* project grid */
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:20px}
+.card{grid-column:span 4;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:12px;
+  text-align:left;color:inherit;font:inherit;cursor:pointer;transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;min-width:0}
+.card:hover{transform:translateY(-2px);box-shadow:var(--shadow);border-color:color-mix(in srgb, var(--accent) 40%, var(--line))}
+.card.feature{grid-column:span 6}
+.card h3{font-size:21px;line-height:1.2;font-weight:700}
+.card .sum{color:var(--muted);font-size:15px}
+.card .foot{margin-top:auto;display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding-top:6px}
+.card .more{margin-left:auto;font:600 14px/1 var(--body);color:var(--accent)}
+.top{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.chip{font:500 12px/1 var(--mono);padding:6px 8px;border-radius:999px;background:var(--sunk);color:var(--muted);white-space:nowrap}
+.status{font:600 12px/1 var(--body);padding:6px 9px;border-radius:999px;display:inline-flex;align-items:center;gap:6px}
+.status::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.s-live{background:var(--ok-bg);color:var(--ok)} .s-pilot{background:var(--warn-bg);color:var(--warn)} .s-done{background:var(--sunk);color:var(--muted)}
+@media (min-width:981px){.card:not(.feature):nth-last-child(-n+2){grid-column:span 6}}
+@media (max-width:980px){.card,.card.feature{grid-column:span 6}}
+@media (max-width:640px){.card,.card.feature{grid-column:span 12}}
+
+/* mocks */
+.mock{background:var(--sunk);border-radius:10px;padding:14px;font:12px/1.35 var(--mono);color:var(--muted);display:grid;gap:8px;min-height:168px;align-content:center;overflow:hidden}
+.mock .note{font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;opacity:.8}
+.lev{display:grid;grid-template-columns:auto 1fr;gap:6px 10px;align-items:center}
+.lev .src{grid-row:span 3;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px;color:var(--ink);text-align:center;font-weight:500}
+.lev .opt{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:6px;padding:6px 8px;color:var(--ink)}
+.lev .out{grid-column:1/-1;background:var(--accent);color:var(--accent-ink);border-radius:6px;padding:8px 10px;font-weight:500;text-align:center}
+.trk{display:grid;gap:6px}
+.trk .row{display:grid;grid-template-columns:70px 1fr 78px;gap:8px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:7px 8px;color:var(--ink)}
+.bar{height:6px;border-radius:9px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent);border-radius:9px}
+.sla{font-size:10.5px;padding:3px 6px;border-radius:99px;text-align:center}
+.sla.ok{background:var(--ok-bg);color:var(--ok)} .sla.bad{background:var(--bad-bg);color:var(--bad)}
+.tree{display:grid;gap:10px;justify-items:center}
+.tree .lvl{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.node{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:6px;padding:5px 8px;font-size:11px;white-space:nowrap}
+.node.vac{background:var(--bad-bg);color:var(--bad);border-color:currentColor}
+.node.nrj{background:var(--amber-bg);color:var(--amber);border-color:currentColor}
+.node.nr1{background:var(--violet-bg);color:var(--violet);border-color:currentColor}
+.node.apex{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.nine{display:grid;grid-template-columns:auto repeat(3,1fr);gap:4px;align-items:stretch}
+.nine .ax{writing-mode:vertical-rl;transform:rotate(180deg);text-align:center;font-size:10px;grid-row:span 3}
+.nine .c{background:var(--surface);border:1px solid var(--line);border-radius:5px;height:34px;display:grid;place-items:center;color:var(--ink);font-weight:500}
+.nine .c.h1{background:color-mix(in srgb, var(--accent) 22%, var(--surface))}
+.nine .c.h2{background:color-mix(in srgb, var(--accent) 45%, var(--surface))}
+.nine .xa{grid-column:2/-1;text-align:center;font-size:10px}
+
+/* experience */
+.xp{display:grid;grid-template-columns:220px minmax(0,1fr);gap:16px 40px}
+.xp + .xp{margin-top:36px;padding-top:36px;border-top:1px dashed var(--line)}
+.xp .when{display:grid;gap:6px;align-content:start}
+.xp .when b{font:600 15px/1.3 var(--body)}
+.xp h3{font-size:22px;font-weight:700;margin-bottom:4px}
+.xp .role{color:var(--muted);margin-bottom:14px}
+.xp ul{margin:0;padding-left:18px;display:grid;gap:8px;max-width:72ch}
+.ppo{display:inline-block;font:600 12px/1 var(--body);padding:6px 9px;border-radius:999px;background:var(--mark-soft);color:var(--ink);width:max-content}
+@media (max-width:760px){.xp{grid-template-columns:minmax(0,1fr)}}
+.fw{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.fw article{border-top:2px solid var(--ink);padding-top:14px;display:grid;gap:8px;align-content:start}
+.fw h3{font-size:19px}
+.fw p{color:var(--muted);font-size:15px}
+@media (max-width:640px){.fw{grid-template-columns:minmax(0,1fr)}}
+
+/* about trio */
+.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
+.trio h3{font-size:18px;margin-bottom:12px}
+.trio ul{margin:0;padding:0;list-style:none;display:grid;gap:12px}
+.trio li{font-size:15px;color:var(--muted)}
+.trio li b{color:var(--ink);font-weight:600;display:block}
+@media (max-width:860px){.trio{grid-template-columns:minmax(0,1fr)}}
+.skills{display:grid;gap:18px}
+.skills div{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.skills .label{width:100%}
+.skills span.sk{font-size:14px;padding:7px 11px;border:1px solid var(--line);border-radius:999px;background:var(--surface)}
+
+/* contact */
+.contact{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:40px;align-items:end}
+.contact h2{font-size:clamp(32px,4.6vw,56px);font-weight:800;line-height:1.05}
+.lines{display:grid;gap:10px}
+.line{display:flex;align-items:center;gap:12px;justify-content:space-between;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;min-width:0}
+.line span{font:500 15px/1.3 var(--mono);user-select:all;overflow-wrap:anywhere}
+.copy{font:600 13px/1 var(--body);background:var(--sunk);color:var(--ink);border:0;border-radius:6px;padding:8px 10px;cursor:pointer;flex:none}
+@media (max-width:760px){.contact{grid-template-columns:minmax(0,1fr)}}
+footer{padding-block:28px 40px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between}
+
+/* dialog */
+dialog{border:0;padding:0;border-radius:16px;background:var(--surface);color:var(--ink);width:min(860px, calc(100vw - 32px));max-height:calc(100dvh - 32px);box-shadow:0 20px 60px rgba(0,0,0,.35)}
+dialog::backdrop{background:rgba(8,14,13,.55)}
+.dlg{display:grid;gap:22px;padding:28px}
+.dlg-head{display:flex;gap:16px;align-items:flex-start}
+.dlg-head h2{font-size:clamp(24px,3.4vw,34px);font-weight:800;line-height:1.1;margin-top:8px}
+.x{margin-left:auto;flex:none;width:40px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font-size:20px;cursor:pointer}
+.video{aspect-ratio:16/9;max-width:100%;border-radius:12px;background:var(--sunk);border:1px dashed var(--line);display:grid;place-items:center;text-align:center;color:var(--muted);padding:16px}
+.video video{width:100%;height:100%;border-radius:12px;background:#000}
+.video .play{width:56px;height:56px;border-radius:50%;background:var(--surface);border:1px solid var(--line);display:grid;place-items:center;margin:0 auto 10px}
+.video .play::after{content:"";border-left:14px solid var(--accent);border-top:9px solid transparent;border-bottom:9px solid transparent;margin-left:4px}
+.dlg-body{display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:28px}
+.dlg-body h3{font:600 12px/1.2 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+.dlg-body .blk + .blk{margin-top:20px}
+.dlg-body ol,.dlg-body ul{margin:0;padding-left:20px;display:grid;gap:6px}
+.side{display:grid;gap:18px;align-content:start;background:var(--sunk);border-radius:12px;padding:18px}
+.side .impact{font:700 18px/1.3 var(--display)}
+.side .tags{display:flex;flex-wrap:wrap;gap:6px}
+.side .tags .chip{background:var(--surface)}
+@media (max-width:720px){.dlg{padding:20px}.dlg-body{grid-template-columns:minmax(0,1fr)}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Vivek Chavan</a>
+    <ul>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="https://labour-codes-by-vivek.github.io/" target="_blank" rel="noopener">Labour Codes ↗</a></li>
+    </ul>
+    <a class="btn btn-primary" href="Vivek_Chavan_CV.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+  </div>
+</header>
+
+<main class="wrap" id="top">
+  <div class="hero">
+    <p class="label">Management Trainee – HR · Reliance Industries · Hazira</p>
+    <h1>I make everyday HR work <em>simpler</em>, one tool at a time.</h1>
+    <p class="lede">TISS HRM&amp;LR graduate with a Mechanical Engineering degree. At Reliance's Hazira polyester complex I work on <strong>manpower cost planning, recruitment, compensation, org design and HR automation</strong>, and build tools that take some of the manual work off the HR team.</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="#work">See the work</a>
+      <a class="btn btn-ghost" href="https://labour-codes-by-vivek.github.io/" target="_blank" rel="noopener">Labour Codes Library ↗</a>
+      <a class="btn btn-ghost" href="#contact">Get in touch</a>
+    </div>
+    <div class="stats" aria-label="Highlights">
+      <div class="stat"><b>900+</b><span>employees in my 5-year manpower and cost model</span></div>
+      <div class="stat"><b>₹60 Cr+</b><span>net savings identified over five years</span></div>
+      <div class="stat"><b>~1,000</b><span>SAP positions in the interactive org explorer</span></div>
+      <div class="stat"><b>80–90%</b><span>less time spent preparing monthly reports</span></div>
+    </div>
+  </div>
+
+  <section id="work">
+    <div class="sec-head">
+      <p class="label">Work at Reliance, Hazira · Jul 2026 – present</p>
+      <h2>Tools and projects</h2>
+      <p>Open any project for the problem, how the tool works and what changed. Screens and videos use sample data; no employee data is shown.</p>
+    </div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section id="experience">
+    <div class="sec-head">
+      <p class="label">Experience</p>
+      <h2>Where I've worked</h2>
+    </div>
+    <div class="xp">
+      <div class="when"><b>Jul 2026 – Present</b><span class="label">Hazira, Gujarat</span></div>
+      <div>
+        <h3>Reliance Industries Ltd.</h3>
+        <p class="role">Management Trainee – HR · Hazira Manufacturing Division (Polyester)</p>
+        <ul>
+          <li>Built a 5-year manpower and cost projection for 900+ employees across 300+ superannuations, identifying ₹60 Cr+ in net savings.</li>
+          <li>Designed a knowledge management architecture for upcoming supervisory retirements; leadership approval and pilot in progress.</li>
+          <li>Built the site's recruitment system, org explorer, LTS compensation tool, attrition analytics and HR team tools, including a performance tracker that scores each task on impact, complexity and manager rating into a final rating.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="xp">
+      <div class="when"><b>Apr – Jun 2025</b><span class="ppo">Pre-Placement Offer</span></div>
+      <div>
+        <h3>Reliance Industries Ltd.</h3>
+        <p class="role">Summer Intern · Jamnagar Manufacturing Division</p>
+        <ul>
+          <li>Analysed 8 years of GET performance, promotion and attrition trends to find retention and progression patterns in early-career engineering talent.</li>
+          <li>Benchmarked capability-building practices across refinery contexts and turned voice-of-employee inputs from 100+ GETs into onboarding, training and engagement recommendations.</li>
+          <li>Designed an automated college scorecard with adjustable weights that ranks engineering campuses on historical hiring data.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sec-head" style="margin-top:56px">
+      <p class="label">TISS fieldwork · 1 month each</p>
+      <h2>HR projects across industries</h2>
+    </div>
+    <div class="fw">
+      <article><p class="label">Agrochemicals</p><h3>UPL Ltd.</h3><p>Built a Base + Flex Field Officer deployment framework from 22 months of data across 17 states, using volatility analysis and scenario modelling to set structural levels and seasonal buffers.</p></article>
+      <article><p class="label">Pharmaceuticals</p><h3>Dr. Reddy's Laboratories</h3><p>Diagnosed culture and engagement themes from 10,000+ AMBER portal entries and 50+ employee conversations; assessed Lean Management practices at CTO-6.</p></article>
+      <article><p class="label">Textiles</p><h3>Indo Count Industries</h3><p>Designed a Talent Management Handbook, L&amp;D framework and competency mapping guide for critical roles, high-potential talent and succession planning.</p></article>
+      <article><p class="label">Steel</p><h3>Tata Steel</h3><p>Analysed attendance discrepancies for 1,000+ contract labourers and proposed an SOP; designed an onboarding SOP and one-year training roadmap for new hires.</p></article>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="trio">
+      <div>
+        <h3>Education</h3>
+        <ul>
+          <li><b>M.A. HRM&amp;LR, TISS Mumbai</b>2024–26 · CGPA 7.50/10</li>
+          <li><b>B.Tech Mechanical, COEP Pune</b>2019–23 · CGPA 6.76/10</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Awards &amp; research</h3>
+        <ul>
+          <li><b>1st, Founders Fortune, iPreneur '25</b>TISS Mumbai</li>
+          <li><b>2nd, SAMIKSHA HR Case Competition</b>Goa Institute of Management</li>
+          <li><b>Dissertation</b>The Digital Panopticon in the Indian Hybrid Workplace</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Leadership</h3>
+        <ul>
+          <li><b>Batch Treasurer, HRM&amp;LR</b>TISS Mumbai, 2024–26 cohort</li>
+          <li><b>Operations lead, Pune Startup Fest '22</b>8 coordinators, 30+ volunteers, 80+ startups</li>
+          <li><b>Head of Events, Impressions '21</b>20-member team, 1,000+ participants</li>
+        </ul>
+      </div>
+    </div>
+    <div class="skills" style="margin-top:48px">
+      <div><p class="label">HR</p>
+        <span class="sk">Manpower cost planning</span><span class="sk">Workforce planning</span><span class="sk">Compensation (LTS)</span><span class="sk">Talent acquisition</span><span class="sk">Org design</span><span class="sk">Knowledge management</span><span class="sk">Performance management</span><span class="sk">Succession planning</span><span class="sk">L&amp;D</span><span class="sk">Employee engagement</span><span class="sk">Industrial relations</span><span class="sk">Labour Codes</span>
+      </div>
+      <div><p class="label">Analytics &amp; tools</p>
+        <span class="sk">People analytics</span><span class="sk">Attrition analytics</span><span class="sk">Dashboards</span><span class="sk">Scenario modelling</span><span class="sk">Advanced Excel &amp; VBA</span><span class="sk">Power Automate</span><span class="sk">SAP HR</span><span class="sk">HR process automation</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact">
+      <div class="sec-head" style="margin:0">
+        <p class="label">Contact</p>
+        <h2>Let's talk about HR that runs on data.</h2>
+      </div>
+      <div class="lines">
+        <div class="line"><span id="em">vivek14chavan@gmail.com</span><button class="copy" type="button" data-copy="em">Copy</button></div>
+        <div class="line"><span id="ph">+91 73500 77163</span><button class="copy" type="button" data-copy="ph">Copy</button></div>
+        <a class="btn btn-ghost" href="Vivek_Chavan_CV.pdf" target="_blank" rel="noopener">Open CV (PDF)</a>
+      </div>
+    </div>
+  </section>
+
+  <footer><span>© 2026 Vivek Chavan</span><span>Sample data only in all screens and videos.</span></footer>
+</main>
+
+<dialog id="dlg" aria-labelledby="dlg-title"><div class="dlg" id="dlg-content"></div></dialog>
+
+<script>
+/* To add a video later: set video:"videos/<file>.mp4" on a project. */
+const P = [
+ { id:"manpower-cost", cat:"Workforce cost", status:["live","In use"], feature:true, mock:"lev",
+   title:"5-year manpower and cost projection",
+   sum:"An employee-level model of the site's headcount and cost through FY31, built around 300+ superannuations.",
+   problem:"Over the next five years more than 300 employees reach superannuation. Each exit is a decision: backfill, replace at lower cost, or don't replace. Leadership needed to see what those decisions do to headcount and cost.",
+   built:"An employee-level projection for 900+ on-roll employees, combining SAP master data, retirement dates, grades and pay, with a leadership note summarising headcount, cost and savings for each year.",
+   steps:["Map every employee's superannuation date to a financial year.","Apply a replacement rule by category: no backfill (with outsourcing where needed) for non-supervisory roles, GET/DET backfills at entry grades, and internal promotions at lower cost for other roles.","Escalate continuing and replacement costs year by year, including LTS wage terms.","Roll up to headcount, cost and CAGR for supervisory, non-supervisory and total."],
+   impact:"₹60 Cr+ net savings identified over five years, with employee-cost growth held to about 0.5% CAGR.",
+   tools:["Excel","SAP HR data","Scenario modelling"] },
+ { id:"recruitment", cat:"Talent acquisition", status:["live","In use"], feature:true, mock:"trk",
+   title:"Recruitment management system",
+   sum:"Tracks every requisition through 48 lifecycle fields and feeds an 11-chart executive dashboard.",
+   problem:"Hiring status lived in scattered sheets. Ageing, TAT and SLA breaches were calculated by hand, so nobody had a reliable view of where each position stood.",
+   built:"An Excel application with a requisition tracker, a candidate shortlist sheet, an SAP data import and an executive dashboard. One macro can rebuild the whole app from scratch.",
+   steps:["Type an employee code or name and the row fills department, section, grade and HRBP from the SAP import.","Shortlists sync both ways: marking one candidate as selected sets the others to No and updates the tracker.","The engine calculates position, posting, interview and offer ageing, total TAT, SLA status and a 10–100% milestone progress bar.","The dashboard shows 4 KPI cards and 11 charts, filtered by all time, one month or a date range."],
+   impact:"Live status of every requisition, with SLA breaches flagged automatically instead of found late.",
+   tools:["Excel VBA","SAP HR","Dashboards"] },
+ { id:"org-explorer", cat:"Org design", status:["live","In use"], feature:true, mock:"tree",
+   title:"Interactive org explorer",
+   sum:"Turns a raw SAP position dump of about 1,000 positions into a clickable org chart with workforce analytics.",
+   problem:"The organogram was rebuilt by hand from SAP data, went out of date quickly, and couldn't answer questions about vacancies, successors or span of control.",
+   built:"A VBA-driven explorer that draws every position as a colour-coded card and links it to dashboards for retirements, vacancies and span of control.",
+   steps:["One click imports the latest SAP dump, then pulls successor pairings, retirement dates, ages and job grades.","Click a card to drill into its branch, go up a level, reset to the apex or search by name, position ID or personnel number.","Switch the retirement horizon (13 months to 10 years) and the dashboards recalculate.","Click any number on any sheet to open the list of positions behind it, or export a branch to its own sheet."],
+   impact:"An org chart that stays current with SAP and answers workforce-planning questions in a click.",
+   tools:["Excel VBA","SAP OM"] },
+ { id:"performance", cat:"Team management", status:["live","In use"], feature:true, mock:"nine",
+   title:"HR team performance tracker",
+   sum:"A self-automated tracker that scores each task on impact, complexity and manager rating into a final rating.",
+   problem:"Performance conversations in the HR team relied on memory. There was no shared record of what each person delivered or how hard it was.",
+   built:"A scorecard for each team member, a manager dashboard and an audit log, with manager-only controls.",
+   steps:["Team members log tasks through a form and add a self rating.","The manager sets impact, complexity and their own rating in protected fields.","Each task gets a weighted score; a contribution matrix gives complex, high-impact tasks more weight in the final rating.","The manager dashboard shows final ratings, grade spread, evaluation status and on-demand charts such as a 9-box."],
+   impact:"A transparent, evidence-based view of each person's contribution over any period.",
+   tools:["Excel VBA","Dashboards"] },
+ { id:"labour-codes", cat:"Labour law", status:["live","Live site"],
+   title:"Labour Codes Library",
+   sum:"A public reference website on India's Labour Codes.",
+   problem:"The new Labour Codes change how HR works day to day, and the material is spread across long legal texts.",
+   built:"A live, searchable reference site, published on GitHub Pages.",
+   steps:["Organised the codes into a browsable library.","Published and maintain it as a public website."],
+   impact:"A quick reference for HR teams.", link:"https://labour-codes-by-vivek.github.io/",
+   tools:["Web","GitHub Pages"] },
+ { id:"knowledge", cat:"Knowledge management", status:["pilot","Approval in progress"],
+   title:"Knowledge management architecture",
+   sum:"A plan to keep critical plant know-how in-house as experienced supervisors retire.",
+   problem:"A wave of supervisory retirements is coming, while many new joiners are early in their careers. Much of what experienced supervisors know isn't written down.",
+   built:"An architecture with three pathways, governance roles for site leadership, HR and managers, and an explainer video.",
+   steps:["Explicit knowledge: role checklists and structured handovers that start well before an exit.","Experiential learning: a mentor journey where the learner watches, explains back, practises, then performs and is validated.","Tacit knowledge: campaigns such as talks by experienced staff, knowledge challenges and a recurring knowledge relay."],
+   impact:"Leadership approval and the pilot launch are in progress.",
+   tools:["Programme design","Change management","Video"] },
+ { id:"lts", cat:"Compensation", status:["live","In use"],
+   title:"LTS compensation tool and SOP",
+   sum:"Automates revised-pay calculations and upgradation reminders for non-supervisory employees.",
+   problem:"Non-supervisory pay is revised under the Long Term Settlement. Upgradations were calculated and entered into the system manually, so timing and figures depended on someone remembering.",
+   built:"A tool that applies the LTS terms to calculate revised pay and raises reminders when upgradations fall due, plus an SOP for the manual in-system upgradation steps.",
+   steps:["Load the employee's current pay and LTS terms.","The tool calculates the revised pay and flags upcoming upgradations.","HR follows the SOP to update the record in the system."],
+   impact:"Consistent calculations and no missed upgradations.",
+   tools:["Excel","SAP HR","SOP design"] },
+ { id:"attrition", cat:"People analytics", status:["live","In use"],
+   title:"Attrition reports and predictive tool",
+   sum:"Monthly and annual attrition reporting, plus a tool that flags attrition risk for any role.",
+   problem:"Attrition was reported after the fact. HR needed to see which roles were at risk before people left.",
+   built:"The site's monthly and annual attrition reports, and a predictive tool that estimates attrition risk for any role.",
+   steps:["Consolidate exits by month, plant, grade and reason.","Publish monthly and annual reports.","Use the predictive tool to flag roles at higher risk."],
+   impact:"Earlier warning on roles likely to lose people.",
+   tools:["Excel","People analytics"] },
+ { id:"calendar", cat:"Team management", status:["live","In use"],
+   title:"Automated team calendar",
+   sum:"A shared calendar for tasks, leave and recurring deadlines across the HR team.",
+   problem:"Leave, deadlines and recurring tasks were tracked in different places, so clashes and missed dates were common.",
+   built:"A Google-Calendar-style month view in Excel with an entry form, owner colours, filters, PDF export and an audit log.",
+   steps:["Double-click a date to add a task or leave for one or more owners.","Set it to repeat daily, weekly, monthly or annually.","Overdue tasks turn red, completed ones are struck through and leave is shaded.","A dashboard summarises the week, month or year."],
+   impact:"One view of who is away and what is due.",
+   tools:["Excel VBA"] },
+ { id:"cost-centre", cat:"Cost governance", status:["done","Completed"],
+   title:"Cost-centre correction",
+   sum:"Found and fixed about 100 wrong cost-centre mappings.",
+   problem:"Employees mapped to the wrong cost centres distorted the cost reported for individual plants.",
+   built:"An analysis of mappings against actual deployment, followed by corrections.",
+   steps:["Compare cost-centre mappings against where people actually work.","Confirm each case with the plant.","Correct the mappings in the system."],
+   impact:"About 100 mappings corrected, giving accurate plant-level cost reporting.",
+   tools:["SAP HR","Excel"] },
+ { id:"automation", cat:"HR automation", status:["live","In use"],
+   title:"Report digitisation and HR automations",
+   sum:"Automated monthly reporting, 300+ award slides in one click, a lucky draw wheel and a site-wide daily email.",
+   problem:"Monthly reports to central and site leadership took days of manual work, and event material was built slide by slide.",
+   built:"A set of automations across reporting, events and communication.",
+   steps:["Digitised and automated all recurring monthly reports to central and site leadership teams.","Generated 300+ personalised Long Service Award slides (names, numbers, photos) in one click.","Designed and built a custom lucky draw wheel for the award ceremony.","Set up a Power Automate flow that emails the whole site at 9 am every day."],
+   impact:"80–90% less time spent preparing monthly reports.",
+   tools:["Excel VBA","PowerPoint automation","Power Automate"] },
+ { id:"engagement", cat:"Engagement", status:["done","Delivered"],
+   title:"DRISHTI and site events",
+   sum:"Coordinated an art and essay competition with 100+ participants, and helped run site celebrations.",
+   problem:"Engagement events need tight coordination across families, departments and site communications.",
+   built:"End-to-end coordination of DRISHTI, an art and essay competition for employees' children, plus support for the Jio IPO celebration and Navratri.",
+   steps:["Ran registrations and logistics for 100+ DRISHTI participants.","Designed posters and emails for Navratri and the Jio IPO celebration."],
+   impact:"100+ participants in DRISHTI.",
+   tools:["Event management","Design"] }
+];
+
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const statusChip = s => `<span class="status s-${s[0]}">${esc(s[1])}</span>`;
+const MOCK = {
+  lev:`<div class="lev"><div class="src">300+<br>exits</div><div class="opt">No backfill</div><div class="opt">GET / DET backfill</div><div class="opt">Internal promotion</div><div class="out">₹60 Cr+ net savings · ~0.5% cost CAGR</div></div>`,
+  trk:`<div class="note">Sample data</div><div class="trk">
+    <div class="row"><span>REQ-1001</span><div class="bar"><i style="width:20%"></i></div><span class="sla ok">Within SLA</span></div>
+    <div class="row"><span>REQ-1002</span><div class="bar"><i style="width:40%"></i></div><span class="sla ok">Within SLA</span></div>
+    <div class="row"><span>REQ-1003</span><div class="bar"><i style="width:85%"></i></div><span class="sla bad">Breached</span></div></div>`,
+  tree:`<div class="note">Sample structure</div><div class="tree"><div class="lvl"><span class="node apex">Plant Head</span></div>
+    <div class="lvl"><span class="node">Ops Manager</span><span class="node">Maint. Manager</span></div>
+    <div class="lvl"><span class="node">Engineer</span><span class="node vac">Vacant · 42d</span><span class="node nrj">Successor</span><span class="node nr1">NR1</span></div></div>`,
+  nine:`<div class="note">Sample data · tasks by impact × complexity</div><div class="nine"><span class="ax">Impact</span>
+    <span class="c">2</span><span class="c h1">5</span><span class="c h2">7</span>
+    <span class="c">3</span><span class="c h1">6</span><span class="c h1">4</span>
+    <span class="c">4</span><span class="c">2</span><span class="c">1</span><span class="xa">Complexity →</span></div>`
+};
+
+document.getElementById("grid").innerHTML = P.map(p => `
+  <button class="card${p.feature?" feature":""}" type="button" data-id="${p.id}" aria-haspopup="dialog">
+    ${p.mock?`<div class="mock" aria-hidden="true">${MOCK[p.mock]}</div>`:""}
+    <div class="top"><span class="label">${esc(p.cat)}</span></div>
+    <h3>${esc(p.title)}</h3>
+    <p class="sum">${esc(p.sum)}</p>
+    <div class="foot">${statusChip(p.status)}<span class="more">Details →</span></div>
+  </button>`).join("");
+
+const dlg = document.getElementById("dlg"), box = document.getElementById("dlg-content");
+function openProject(id){
+  const p = P.find(x => x.id === id); if(!p) return;
+  const video = p.video
+    ? `<div class="video"><video src="${esc(p.video)}" controls preload="metadata"></video></div>`
+    : `<div class="video"><div><div class="play"></div><b>Walkthrough video coming soon</b><br><span>Recorded on sample data</span></div></div>`;
+  box.innerHTML = `
+    <div class="dlg-head"><div><p class="label">${esc(p.cat)}</p><h2 id="dlg-title">${esc(p.title)}</h2></div>
+      <button class="x" type="button" aria-label="Close" data-close>×</button></div>
+    ${video}
+    <div class="dlg-body">
+      <div>
+        <div class="blk"><h3>The problem</h3><p>${esc(p.problem)}</p></div>
+        <div class="blk"><h3>What I built</h3><p>${esc(p.built)}</p></div>
+        <div class="blk"><h3>How it works</h3><ol>${p.steps.map(s=>`<li>${esc(s)}</li>`).join("")}</ol></div>
+      </div>
+      <aside class="side">
+        <div><h3>Status</h3>${statusChip(p.status)}</div>
+        <div><h3>Result</h3><p class="impact">${esc(p.impact)}</p></div>
+        <div><h3>Built with</h3><div class="tags">${p.tools.map(t=>`<span class="chip">${esc(t)}</span>`).join("")}</div></div>
+        ${p.link?`<a class="btn btn-primary" href="${esc(p.link)}" target="_blank" rel="noopener">Visit the site</a>`:""}
+      </aside>
+    </div>`;
+  if(!dlg.open) dlg.showModal();
+}
+function route(){ const h = location.hash.slice(1); if(P.some(p=>p.id===h)) openProject(h); else if(dlg.open) dlg.close(); }
+document.getElementById("grid").addEventListener("click", e => { const c = e.target.closest(".card"); if(c){ location.hash = c.dataset.id; openProject(c.dataset.id); } });
+dlg.addEventListener("click", e => { if(e.target === dlg || e.target.closest("[data-close]")) dlg.close(); });
+dlg.addEventListener("close", () => { if(P.some(p=>"#"+p.id===location.hash)) history.replaceState(null,"",location.pathname + location.search + "#work"); });
+window.addEventListener("hashchange", route); route();
+
+document.querySelectorAll("[data-copy]").forEach(b => b.addEventListener("click", () => {
+  const el = document.getElementById(b.dataset.copy), txt = el.textContent;
+  const done = () => { b.textContent = "Copied"; setTimeout(()=>b.textContent="Copy", 1500); };
+  const fallback = () => { const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = "Selected"; setTimeout(()=>b.textContent="Copy",1500); };
+  try { navigator.clipboard.writeText(txt).then(done, fallback); } catch(_) { fallback(); }
+}));
+</script>
+</body>
+</html>
