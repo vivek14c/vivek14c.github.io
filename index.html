@@ -209,8 +209,8 @@ dialog::backdrop{background:rgba(8,14,13,.55)}
 <main class="wrap" id="top">
   <div class="hero">
     <p class="label">Management Trainee – HR · Reliance Industries · Hazira</p>
-    <h1>I make everyday HR work <em>simpler</em>, one tool at a time.</h1>
-    <p class="lede">TISS HRM&amp;LR graduate with a Mechanical Engineering degree. At Reliance's Hazira polyester complex I work on <strong>manpower cost planning, recruitment, compensation, org design and HR automation</strong>, and build tools that take some of the manual work off the HR team.</p>
+    <h1>I am making HR work <em>simpler</em>, one tool at a time.</h1>
+    <p class="lede">TISS HRM&amp;LR graduate with a Mechanical Engineering degree. At Reliance's Hazira polyester complex, I am working on <strong>manpower cost planning, recruitment, compensation, org design and HR automation</strong>, and building tools that take manual work off the HR team.</p>
     <div class="cta">
       <a class="btn btn-primary" href="#work">See the work</a>
       <a class="btn btn-ghost" href="https://labour-codes-by-vivek.github.io/" target="_blank" rel="noopener">Labour Codes Library ↗</a>
@@ -353,8 +353,8 @@ const P = [
    title:"Interactive org explorer",
    sum:"Turns a raw SAP position dump of about 1,000 positions into a clickable org chart with workforce analytics.",
    problem:"The organogram was rebuilt by hand from SAP data, went out of date quickly, and couldn't answer questions about vacancies, successors or span of control.",
-   built:"A VBA-driven explorer that draws every position as a colour-coded card and links it to dashboards for retirements, vacancies and span of control.",
-   steps:["One click imports the latest SAP dump, then pulls successor pairings, retirement dates, ages and job grades.","Click a card to drill into its branch, go up a level, reset to the apex or search by name, position ID or personnel number.","Switch the retirement horizon (13 months to 10 years) and the dashboards recalculate.","Click any number on any sheet to open the list of positions behind it, or export a branch to its own sheet."],
+   built:"A VBA-driven explorer that draws every position as a colour-coded card, with an executive dashboard, R positions grade-fit analysis, span of control and a vacancy validator.",
+   steps:["One click imports the latest SAP dump, then pulls successor pairings, retirement dates, ages and job grades.","Click a card to drill into its branch, go up a level, reset to the apex or search by name, position ID or personnel number.","Switch the retirement horizon (13 months to 10 years) and the dashboards recalculate.","Click any number on any sheet to open the list of positions behind it, or export a branch to its own sheet.","R positions analysis: approved vs right fill, underfill and overfill by job grade, current availability, manpower gap or surplus, and successors (NRJ, NR1) in the pipeline.","Span of control: every manager's direct reports by stream, supervisory and non-supervisory, occupied and vacant, with span filters and drill-downs.","Vacant R validator: exclude vacancies that exist only because of SAP errors, so dashboards count real vacancies."],
    impact:"An org chart that stays current with SAP and answers workforce-planning questions in a click.",
    tools:["Excel VBA","SAP OM"] },
  { id:"performance", video:"videos/performance-tracker.mp4", cat:"Team management", status:["live","In use"], feature:true, mock:"nine",
@@ -362,10 +362,10 @@ const P = [
    sum:"A self-automated tracker that scores each task on impact, complexity and manager rating into a final rating.",
    problem:"Performance conversations in the HR team relied on memory. There was no shared record of what each person delivered or how hard it was.",
    built:"A scorecard for each team member, a manager dashboard and an audit log, with manager-only controls.",
-   steps:["Team members log tasks through a form and add a self rating.","The manager sets impact, complexity and their own rating in protected fields.","Each task gets a weighted score; a contribution matrix gives complex, high-impact tasks more weight in the final rating.","The manager dashboard shows final ratings, grade spread, evaluation status and on-demand charts such as a 9-box."],
+   steps:["Team members log tasks through a form and add a self rating.","The manager sets impact, complexity and their own rating in protected fields.","Each task gets a weighted score; a contribution matrix gives complex, high-impact tasks more weight in the final rating.","The manager dashboard shows final ratings, grade spread, evaluation status and a rating-skew chart comparing each person's self rating with the manager's rating."],
    impact:"A transparent, evidence-based view of each person's contribution over any period.",
    tools:["Excel VBA","Dashboards"] },
- { id:"labour-codes", cat:"Labour law", status:["live","Live site"],
+ { id:"labour-codes", video:"videos/labour-codes.mp4", cat:"Labour law", status:["live","Live site"],
    title:"Labour Codes Library",
    sum:"A public reference website on India's Labour Codes.",
    problem:"The new Labour Codes change how HR works day to day, and the material is spread across long legal texts.",
@@ -381,7 +381,7 @@ const P = [
    steps:["Explicit knowledge: role checklists and structured handovers that start well before an exit.","Experiential learning: a mentor journey where the learner watches, explains back, practises, then performs and is validated.","Tacit knowledge: campaigns such as talks by experienced staff, knowledge challenges and a recurring knowledge relay."],
    impact:"Leadership approval and the pilot launch are in progress.",
    tools:["Programme design","Change management","Video"] },
- { id:"lts", cat:"Compensation", status:["live","In use"],
+ { id:"lts", video:"videos/lts-compensation.mp4", cat:"Compensation", status:["live","In use"],
    title:"LTS compensation tool and SOP",
    sum:"Automates revised-pay calculations and upgradation reminders for non-supervisory employees.",
    problem:"Non-supervisory pay is revised under the Long Term Settlement. Upgradations were calculated and entered into the system manually, so timing and figures depended on someone remembering.",
@@ -397,7 +397,7 @@ const P = [
    steps:["Consolidate exits by month, plant, grade and reason.","Publish monthly and annual reports.","Use the predictive tool to flag roles at higher risk."],
    impact:"Earlier warning on roles likely to lose people.",
    tools:["Excel","People analytics"] },
- { id:"calendar", cat:"Team management", status:["live","In use"],
+ { id:"calendar", video:"videos/team-calendar.mp4", cat:"Team management", status:["live","In use"],
    title:"Automated team calendar",
    sum:"A shared calendar for tasks, leave and recurring deadlines across the HR team.",
    problem:"Leave, deadlines and recurring tasks were tracked in different places, so clashes and missed dates were common.",
