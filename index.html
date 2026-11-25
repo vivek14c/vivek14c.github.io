@@ -51,7 +51,7 @@ p{margin:0}
 .nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb, var(--bg) 88%, transparent);
   backdrop-filter:blur(8px);border-bottom:1px solid var(--line);margin:0 calc(-1 * max(16px, env(safe-area-inset-left,0px))) 0 calc(-1 * max(16px, env(safe-area-inset-right,0px)))}
 .nav .wrap{display:flex;align-items:center;gap:24px;padding:12px max(16px, env(safe-area-inset-right,0px)) 12px max(16px, env(safe-area-inset-left,0px));min-height:56px}
-.brand{font:700 17px/1 var(--display);color:var(--ink);text-decoration:none;margin-right:auto}
+.brand{display:inline-flex;align-items:center;gap:10px;font:800 18px/1 var(--display);letter-spacing:.06em;text-transform:uppercase;color:var(--ink);text-decoration:none;margin-right:auto} .brand .mono{display:grid;place-items:center;width:32px;height:32px;border-radius:8px;background:var(--accent);color:var(--accent-ink);font:800 13px/1 var(--display);letter-spacing:.02em}
 .nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0}
 .nav ul a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:500}
 .nav ul a:hover{color:var(--ink)}
@@ -192,7 +192,7 @@ dialog::backdrop{background:rgba(8,14,13,.55)}
 
 <header class="nav">
   <div class="wrap">
-    <a class="brand" href="#top">Vivek Chavan</a>
+    <a class="brand" href="#top" aria-label="Vivek Chavan, home"><span class="mono" aria-hidden="true">VC</span>VIVEK CHAVAN</a>
     <ul>
       <li><a href="#work">Work</a></li>
       <li><a href="#experience">Experience</a></li>
